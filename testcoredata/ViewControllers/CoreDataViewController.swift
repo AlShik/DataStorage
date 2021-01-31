@@ -87,5 +87,20 @@ return cell
             
         }
     }
-   
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+      
+         
+                
+            let selectedItem = tableView.cellForRow(at:  indexPath) as! CoreDataTableViewCell
+            SelectedLabelForDelete = selectedItem.SecondLabel.text!
+            print(SelectedLabelForDelete)
+            CoreDataDataHandling.DeleteFromCoreData(taskname: SelectedLabelForDelete)
+        FetchedArray =  CoreDataDataHandling.fetchFromCoreData()
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+         
+    
 }
+    
+}
+

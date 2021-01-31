@@ -117,5 +117,5 @@ let cell = tableView.dequeueReusableCell(withIdentifier: "MyWeatherCell", for: i
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200.0;//Choose your custom row height
     }
-    
+  
 }

@@ -535,6 +535,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="TaskTextField" destination="Vep-b5-yZr" id="OCQ-95-1xn"/>
+                        <outlet property="deletebutton" destination="9gZ-8n-bMp" id="4fL-cK-XQQ"/>
                         <outlet property="tableView" destination="GB9-FD-ixv" id="mud-gT-e7b"/>
                     </connections>
                 </viewController>

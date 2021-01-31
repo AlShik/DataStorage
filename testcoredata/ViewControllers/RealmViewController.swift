@@ -9,6 +9,7 @@ import UIKit
 
 class RealmViewController: UIViewController {
 
+    @IBOutlet weak var deletebutton: UIBarButtonItem!
     @IBOutlet weak var TaskTextField: UITextField!
     var SelectedLabelForDelete : String = ""
     @IBOutlet weak var tableView: UITableView!
@@ -19,7 +20,7 @@ class RealmViewController: UIViewController {
         tableView.delegate = self
 
         tableView.dataSource = self
-     
+        
        
       
        
@@ -92,5 +93,19 @@ return cell
             
         }
     }
-   
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+      
+         
+                
+            let selectedItem = tableView.cellForRow(at:  indexPath) as! RealmTableViewCell
+            SelectedLabelForDelete = selectedItem.SecondLabel.text!
+            print(SelectedLabelForDelete)
+        ToDoListRealmDatasourse.shared.deleteRealmData(object: SelectedLabelForDelete)
+            
+       
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+         
+    
+}
 }
